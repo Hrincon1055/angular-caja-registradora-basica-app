@@ -1,0 +1,17 @@
+<div class="alert alert-primary mt-2" role="alert">Comanda</div>
+<div class="row">
+  <div class="col">
+    <p>TOTAL: $ {{ calculaTotal() }}</p>
+    <ul class="list-group">
+      <li
+        *ngFor="let producto of arrProductos; let i = index"
+        (dblclick)="onClickBorrar(i)"
+        class="list-group-item"
+      >
+        {{ producto.nombre }} X {{ producto.cantidad }} - ${{
+          producto.precio * producto.cantidad
+        }}
+      </li>
+    </ul>
+  </div>
+</div>
